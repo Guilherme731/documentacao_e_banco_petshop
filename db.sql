@@ -39,25 +39,21 @@ CREATE TABLE Agendamento(
     
 );
 
--- Inserindo clientes
 INSERT INTO Cliente (nome, cpf, telefone, email) VALUES
 ('Maria Silva', '12345678901', '9999999999999', 'maria.silva@email.com'),
 ('João Pereira', '98765432100', '9999999999999', 'joao.pereira@email.com'),
 ('Ana Souza', '45678912345', '9999999999999', 'ana.souza@email.com');
 
--- Inserindo pets (relacionados aos clientes)
 INSERT INTO Pet (cliente_id, nome, especie, porte, nascimento) VALUES
 (1, 'Rex', 'Pastor Alemão', 'Grande', '2019-05-10'),
 (2, 'Luna', 'Poodle', 'Pequeno', '2021-08-15'),
 (3, 'Thor', 'Husky', 'Médio', '2020-11-30');
 
--- Inserindo serviços
 INSERT INTO Servico (nome, preco, duracao_min) VALUES
-('Banho e Tosa', 80.00, 60),
-('Consulta Veterinária', 150.00, 40),
+('Banho', 80.00, 60),
+('Tosa', 150.00, 40),
 ('Vacinação', 90.00, 20);
 
--- Inserindo agendamentos (relacionados aos pets e serviços)
 INSERT INTO Agendamento (pet_id, servico_id, data_hora, status, observacoes) VALUES
 (1, 1, '2025-09-05 10:00:00', 'Agendado', NULL),
 (2, 2, '2025-09-06 14:00:00', 'Concluido', 'Consulta de rotina'),
